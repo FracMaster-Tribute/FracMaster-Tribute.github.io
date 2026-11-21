@@ -96,8 +96,8 @@ nav.toc a:hover{background:var(--chip)}
 .lb button{font:inherit;font-weight:800;border:0;border-radius:4px;padding:10px 18px;cursor:pointer;background:var(--yellow);color:#1c1a15;min-height:2.75rem}
 .lb button.ghost{background:#fff}
 /* VIDEOS */
-.vid{display:flex;gap:16px;align-items:flex-start}
-.vid .play{flex:0 0 auto;width:52px;height:52px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;text-decoration:none}
+.vcard video{width:100%;height:auto;display:block;background:#000;border-radius:4px;margin-bottom:12px}
+.vcard video.vportrait{width:auto;max-width:100%;max-height:480px;margin-left:auto;margin-right:auto}
 /* FOOTER */
 footer{background:var(--green-deep);color:#e9e5d5;padding:44px 0 54px}
 footer a{color:var(--yellow)}
@@ -267,14 +267,14 @@ ul.srcs li{margin-bottom:8px;break-inside:avoid;font-size:.92rem}
 <section class="sec alt" id="videos">
   <div class="wrap">
     <p class="kicker">Videos</p>
-    <h2>Watch them in the group</h2>
-    <p class="lede">Five videos live in the Facebook group. Facebook offers no download for them, so they aren't embedded here — each card opens the original post, where they play fine.</p>
+    <h2>Watch them right here</h2>
+    <p class="lede">All five videos from the Facebook group are hosted on this page — press play and they run right here, no trip to Facebook needed. They're older recordings, so the picture quality is what the years left us.</p>
     <div class="grid">
-      <div class="card vid"><a class="play" href="https://facebook.com/groups/52396026847/permalink/10159471426991848/" target="_blank" rel="noopener" aria-label="Watch on Facebook: Nov 1993 Frac Family magazine">▶</a><div><h3>Nov 1993 Frac Family magazine</h3><p>1:30 · Posted by Patrick Lockhart</p></div></div>
-      <div class="card vid"><a class="play" href="https://facebook.com/groups/52396026847/permalink/10156256828181848/" target="_blank" rel="noopener" aria-label="Watch on Facebook: Basketball, Team CFM Canada vs Russia">▶</a><div><h3>Basketball — Team CFM Canada vs Russia</h3><p>6:40 · Posted by Murray Gillis</p></div></div>
-      <div class="card vid"><a class="play" href="https://facebook.com/groups/52396026847/permalink/10156256508201848/" target="_blank" rel="noopener" aria-label="Watch on Facebook: 1989 first frac under the joint venture, Moscow TV">▶</a><div><h3>1989 — first frac under the JV, Moscow TV</h3><p>13:38 · Posted by Murray Gillis</p></div></div>
-      <div class="card vid"><a class="play" href="https://facebook.com/groups/52396026847/permalink/10156256401971848/" target="_blank" rel="noopener" aria-label="Watch on Facebook: CBC TV news story">▶</a><div><h3>CBC TV news story</h3><p>2:31 · Posted by Murray Gillis</p></div></div>
-      <div class="card vid"><a class="play" href="https://facebook.com/groups/52396026847/permalink/10156256329836848/" target="_blank" rel="noopener" aria-label="Watch on Facebook: Carl Larsen lunch in Russia">▶</a><div><h3>Carl Larsen lunch in Russia</h3><p>0:26 · Posted by Murray Gillis</p></div></div>
+      <div class="card vcard"><video class="vportrait" controls preload="metadata" playsinline src="assets/videos/01-frac-family-magazine-1993.mp4" aria-label="Nov 1993 Frac Family magazine"></video><h3>Nov 1993 Frac Family magazine</h3><p>1:30 · Posted by Patrick Lockhart</p></div>
+      <div class="card vcard"><video controls preload="metadata" playsinline src="assets/videos/02-basketball-canada-vs-russia.mp4" aria-label="Basketball — Team CFM Canada vs Russia"></video><h3>Basketball — Team CFM Canada vs Russia</h3><p>6:40 · Posted by Murray Gillis</p></div>
+      <div class="card vcard"><video controls preload="metadata" playsinline src="assets/videos/03-first-frac-jv-1989.mp4" aria-label="1989 — first frac under the JV, Moscow TV"></video><h3>1989 — first frac under the JV, Moscow TV</h3><p>13:37 · Posted by Murray Gillis</p></div>
+      <div class="card vcard"><video controls preload="metadata" playsinline src="assets/videos/04-cbc-news-story.mp4" aria-label="CBC TV news story"></video><h3>CBC TV news story</h3><p>2:30 · Posted by Murray Gillis</p></div>
+      <div class="card vcard"><video controls preload="metadata" playsinline src="assets/videos/05-carl-larsen-lunch-russia.mp4" aria-label="Carl Larsen lunch in Russia"></video><h3>Carl Larsen lunch in Russia</h3><p>0:26 · Posted by Murray Gillis</p></div>
       <div class="card"><h3>The group itself</h3><p>402 posts going back to 2009 — photos, memories and old friends finding each other again.</p><p><a href="https://www.facebook.com/groups/52396026847/" target="_blank" rel="noopener">Canadian Fracmaster Ltd. group on Facebook →</a></p></div>
     </div>
   </div>
