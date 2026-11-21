@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Canadian Fracmaster Ltd. — A Tribute, 1976–1999</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --red:#c1272d; --red-dark:#8f1d22; --gold:#e9a90b; --yellow:#f6c90e;
+  --green:#17452f; --green-deep:#0f3120;
+  --bg:#ffffff; --bg2:#f6f4ec; --ink:#1c1a15; --ink2:#57534a; --line:#e2ddcf;
+  --card:#ffffff; --chip:#fdf6dd;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#101511; --bg2:#171d18; --ink:#f2efe6; --ink2:#b9b4a4; --line:#2c352d; --card:#1a211b; --chip:#2a2413; --red:#e0454b; --gold:#f0b51e; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+body{margin:0;font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--red)}
+button,[role="button"],summary{min-height:2.25rem}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.12;margin:0}
+h2{font-size:clamp(1.7rem,4.5vw,2.5rem);font-weight:900;letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:800}
+.sec{padding:56px 0}
+.sec.alt{background:var(--bg2)}
+.kicker{font-family:"Archivo Narrow",sans-serif;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);font-size:.85rem;margin:0 0 8px}
+.lede{font-size:1.12rem;color:var(--ink2);max-width:70ch}
+.small{font-size:.88rem;color:var(--ink2)}
+/* HERO */
+.hero{position:relative;color:#fff;overflow:hidden;background:var(--green-deep)}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;opacity:.92}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,25,16,.38) 0%,rgba(10,25,16,.18) 42%,rgba(10,25,16,.88) 100%)}
+.hero .inner{position:relative;padding:64px 0 44px}
+.wordmark{display:inline-block;background:#fff;color:var(--red);font-weight:900;font-style:italic;letter-spacing:.02em;padding:8px 16px 9px;font-size:clamp(1.5rem,5.5vw,2.6rem);line-height:1;box-shadow:6px 6px 0 var(--gold)}
+.wordmark small{display:block;font-style:normal;color:var(--green);font-size:.42em;letter-spacing:.28em;font-weight:800;margin-top:5px}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);font-weight:900;margin:26px 0 10px;max-width:16ch;text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.hero p{max-width:62ch;font-size:1.08rem;color:#f3efe2;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.hero .meta span{background:rgba(15,49,32,.82);border:1px solid rgba(246,201,14,.65);color:#fff;padding:6px 12px;font-size:.86rem;font-weight:600;border-radius:3px}
+.strip{height:10px;background:repeating-linear-gradient(90deg,var(--red) 0 120px,var(--yellow) 120px 240px,var(--green) 240px 360px,#fff 360px 420px)}
+/* NAV */
+nav.toc{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:3px solid var(--gold);overflow-x:auto;scrollbar-width:none}
+nav.toc .wrap{display:flex;gap:4px;padding-top:6px;padding-bottom:6px;white-space:nowrap}
+nav.toc a{color:var(--ink);text-decoration:none;font-weight:700;font-size:.92rem;padding:9px 12px;border-radius:4px}
+nav.toc a:hover{background:var(--chip)}
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:28px}
+.stat{border:1px solid var(--line);border-top:6px solid var(--red);background:var(--card);padding:18px}
+.stat:nth-child(2){border-top-color:var(--gold)} .stat:nth-child(3){border-top-color:var(--green)} .stat:nth-child(4){border-top-color:var(--red)}
+.stat b{display:block;font-size:1.9rem;font-weight:900;line-height:1.05}
+.stat span{color:var(--ink2);font-size:.92rem}
+/* CARDS / GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:26px}
+.card{border:1px solid var(--line);background:var(--card);padding:20px;border-radius:6px}
+.card h3{margin-bottom:6px}
+.card p{margin:0 0 8px;color:var(--ink2)}
+.card .src{font-size:.8rem}
+.tag{display:inline-block;background:var(--chip);border:1px solid var(--gold);color:var(--ink);font-size:.78rem;font-weight:700;padding:2px 9px;border-radius:99px;margin-bottom:10px}
+/* TIMELINE */
+.tl{margin-top:30px;border-left:4px solid var(--green);padding-left:0;list-style:none}
+.tl li{position:relative;padding:0 0 22px 26px}
+.tl li::before{content:"";position:absolute;left:-10px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--yellow);border:3px solid var(--red)}
+.tl time{font-family:"Archivo Narrow",sans-serif;font-weight:700;letter-spacing:.06em;color:var(--red);text-transform:uppercase;font-size:.9rem}
+.tl p{margin:3px 0 0;color:var(--ink2);max-width:75ch}
+.tl p b{color:var(--ink)}
+/* CHART */
+.chartbox{border:1px solid var(--line);background:var(--card);padding:22px;border-radius:6px;margin-top:26px}
+.chartbox svg{width:100%;height:auto}
+/* GALLERY */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 18px}
+.filters button{font:inherit;font-weight:700;border:2px solid var(--green);background:transparent;color:var(--ink);padding:8px 16px;border-radius:99px;cursor:pointer;min-height:2.5rem}
+.filters button[aria-pressed="true"]{background:var(--green);color:#fff}
+.filters button.souv{border-color:var(--red)} .filters button.souv[aria-pressed="true"]{background:var(--red)}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+@media(min-width:760px){.gal{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}}
+.gitem{border:1px solid var(--line);background:var(--card);border-radius:6px;overflow:hidden;text-align:left;padding:0;cursor:pointer;font:inherit;color:inherit}
+.gitem img{width:100%;height:170px;object-fit:cover}
+.gitem .cap{padding:9px 11px;font-size:.82rem;line-height:1.45;color:var(--ink2)}
+.gitem .cap b{color:var(--ink);display:block;font-size:.86rem}
+.gitem:focus-visible,.filters button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;background:rgba(8,14,10,.94);z-index:80;display:none;flex-direction:column;align-items:center;justify-content:center;padding:18px}
+.lb.open{display:flex}
+.lb img{max-height:72vh;max-width:100%;object-fit:contain;border:4px solid #fff}
+.lb .lcap{color:#f3efe2;max-width:70ch;text-align:center;margin-top:14px;font-size:.95rem}
+.lb .lcap b{color:var(--yellow)}
+.lb .row{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;justify-content:center}
+.lb button{font:inherit;font-weight:800;border:0;border-radius:4px;padding:10px 18px;cursor:pointer;background:var(--yellow);color:#1c1a15;min-height:2.75rem}
+.lb button.ghost{background:#fff}
+/* VIDEOS */
+.vid{display:flex;gap:16px;align-items:flex-start}
+.vid .play{flex:0 0 auto;width:52px;height:52px;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.2rem;text-decoration:none}
+/* FOOTER */
+footer{background:var(--green-deep);color:#e9e5d5;padding:44px 0 54px}
+footer a{color:var(--yellow)}
+footer .wordmark{box-shadow:5px 5px 0 var(--red)}
+details{border:1px solid var(--line);background:var(--card);border-radius:6px;padding:6px 18px;margin-top:14px}
+summary{font-weight:800;cursor:pointer;padding:10px 0}
+ul.srcs{columns:1;padding-left:20px} @media(min-width:800px){ul.srcs{columns:2}}
+ul.srcs li{margin-bottom:8px;break-inside:avoid;font-size:.92rem}
+.note{border-left:6px solid var(--gold);background:var(--chip);padding:14px 18px;margin-top:22px}
+.note p{margin:0}
+/* CONTACT FORM */
+.cform{max-width:560px;margin-top:24px;display:grid;gap:14px}
+.cform label{font-weight:700;display:grid;gap:6px}
+.cform input,.cform textarea{font:inherit;font-weight:400;padding:10px 12px;border:1px solid var(--line);border-radius:4px;background:var(--card);color:var(--ink);width:100%}
+.cform input:focus-visible,.cform textarea:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.cform button{font:inherit;font-weight:800;background:var(--red);color:#fff;border:0;border-radius:4px;padding:12px 28px;cursor:pointer;justify-self:start;min-height:2.75rem}
+.cform button:hover{background:var(--red-dark)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="bg" src="assets/gallery/f14.jpg" alt="A Fracmaster crew in green coveralls and red, yellow and white hard hats standing in front of a yellow pump truck and storage tanks on a sunny lease site" />
+  <div class="shade"></div>
+  <div class="wrap inner">
+    <span class="wordmark">FRACMASTER<small>CANADIAN FRACMASTER LTD. · CALGARY</small></span>
+    <h1>The Calgary crew that took the frac to Siberia</h1>
+    <p>Canadian Fracmaster Ltd. grew from a Western Canadian well-stimulation contractor — cementing, acidizing, fracturing — into a billion-dollar international company that pioneered Western joint ventures in the Soviet Union. Then, in eighteen hard months, it was gone. This page is for the hands who wore the green coveralls.</p>
+    <div class="meta">
+      <span>Founded 5 April 1976</span><span>Calgary, Alberta</span><span>1976 – 1999</span><span>Peak value: over C$1 billion (fall 1997)</span>
+    </div>
+  </div>
+</header>
+<div class="strip" aria-hidden="true"></div>
+
+<nav class="toc" aria-label="On this page">
+  <div class="wrap">
+    <a href="#story">Story</a><a href="#people">People</a><a href="#russia">Russia &amp; China</a><a href="#fall">Rise &amp; Fall</a><a href="#timeline">Timeline</a><a href="#gallery">Gallery</a><a href="#souvenirs">Souvenirs</a><a href="#videos">Videos</a><a href="#legacy">Legacy</a><a href="#sources">Sources</a>
+  </div>
+</nav>
+
+<main>
+<section class="sec" id="story">
+  <div class="wrap">
+    <p class="kicker">The story</p>
+    <h2>Well stimulation, done the Alberta way</h2>
+    <p class="lede">Fracmaster was incorporated federally on <b>5 April 1976</b> as Canadian Fracmasters Limited, renamed Canadian Fracmaster Ltd. on 21 November 1977. From Calgary it provided cementing, acidizing, fracturing and well services to the oilpatch — injecting material at high pressure down a well bore to crack the formation and bring more oil and gas to surface. Headquarters ended up at <b>1700 Fracmaster Tower, 355 – 4th Avenue S.W., Calgary</b>.</p>
+    <div class="stats">
+      <div class="stat"><b>1976</b><span>Incorporated in Calgary — Corporations Canada record 097709-8</span></div>
+      <div class="stat"><b>&gt;C$1 billion</b><span>Toronto Stock Exchange value at its peak, fall 1997</span></div>
+      <div class="stat"><b>~1,000</b><span>Employees worldwide, April 1998 (Financial Post profile)</span></div>
+      <div class="stat"><b>23 years</b><span>From founding to the end of the name in the Canadian oilpatch, 1999</span></div>
+    </div>
+    <div class="grid">
+      <div class="card"><span class="tag">The work</span><h3>Cementing · Acidizing · Fracturing</h3><p>The Calgary Herald's summary: “Founded in 1976, Fracmaster rose to great heights providing cementing, acidizing, fracturing and well services to the oilpatch.” It also ran a coiled-tubing business (Flextube) and held coiled-tubing and fracture-treatment patents.</p></div>
+      <div class="card"><span class="tag">The reach</span><h3>Canada, the U.S., Russia, China</h3><p>Western Canada first, then South Texas (Laredo), Louisiana and New Mexico — and, from 1989, joint ventures in Siberia and a 720-well programme in Shandong, China. By May 1998 it claimed roughly 10% of the U.S. pressure-pumping market.</p></div>
+      <div class="card"><span class="tag">The colours</span><h3>Red, yellow &amp; green</h3><p>The livery on this page comes straight off the gear: red FRACMASTER wordmark, yellow trucks, hats and tools, and the dark green coveralls with red shoulder panels and yellow reflective stripes the crews wore from Alberta to Siberia.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="people">
+  <div class="wrap">
+    <p class="kicker">People</p>
+    <h2>The names in the record</h2>
+    <div class="grid">
+      <div class="card"><h3>Alfred Balm — founder &amp; chairman</h3><p>The Globe and Mail calls Balm “Fracmaster Ltd.'s founder”; the Financial Post called him “the Geneva-based billionaire who built Fracmaster Ltd.” He was chairman and CEO until he sold his 67.5% stake in September 1997 — the hinge event of the whole story.</p></div>
+      <div class="card"><h3>Ron Bullen — president</h3><p>President from 1976, per a biographical directory (a weaker source — treat with care), and named as president by Oil &amp; Gas Journal in March 1991 when the Soviet venture turned a profit. The University of Alberta's engineering magazine profiled him in 2007 as “The Master of Frac.”</p></div>
+      <div class="card"><h3>Doug Ramsay — president to 1994</h3><p>Served as president of Canadian Fracmaster until 1994 after 12 years building its worldwide presence. In 1999 he co-founded Calfrac Well Services — Fracmaster's direct living legacy.</p><p class="src">Source: Calfrac news release, 14 May 2013.</p></div>
+      <div class="card"><h3>Les Margetak — president &amp; CEO at the end</h3><p>President by June 1997 and president/CEO at the NYSE listing on 8 April 1998. An April 1998 Financial Post profile described the 44-year-old guiding a firm with ~C$500 million in annual revenue and 1,000 employees worldwide.</p></div>
+    </div>
+    <div class="note"><p><b>Honest gap:</b> no source found names the co-founders, the first yard, or how Balm and Bullen met. Whether they founded it together is not established, so this page doesn't claim it.</p></div>
+  </div>
+</section>
+
+<section class="sec" id="russia">
+  <div class="wrap">
+    <p class="kicker">Russia &amp; China</p>
+    <h2>First into Siberia</h2>
+    <p class="lede">On 13 January 1987 the USSR opened the door to joint ventures. Fracmaster walked through it early — and for a while, it worked brilliantly.</p>
+    <div class="grid">
+      <div class="card"><span class="tag">30 March 1989</span><h3>Uganskfracmaster</h3><p>The first venture: 51% Uganskneftegas Production Association, 49% Canadian Fracmaster (Offshore) Ltd. and Shell. Over 50 fracturing jobs were done by June 1990, with substantially increased production in treated wells.</p><p class="src">Source: OnePetro PETSOC-90-23 (Hussin &amp; Petryk, 1990).</p></div>
+      <div class="card"><span class="tag">March 1991</span><h3>Turning a profit</h3><p>Oil &amp; Gas Journal reported the venture had recouped its investment in two years. Fracmaster stimulated wells at its own expense for a share of the production increase — gains of ~10,000 barrels a day, sold for hard currency. It had invested ~US$23 million and donated over US$5 million to Nefteyugansk and nearby communities.</p></div>
+      <div class="card"><span class="tag">29 July 1991</span><h3>Samotlor with PanCanadian</h3><p>Samotlor PanCanadian Fracmaster Services: 25% PanCanadian, 25% Fracmaster, 50% Samotlorneft — Tyumen region, western Siberia, targeting 35,000 b/d within five years. EBRD loans followed in 1992, and by July 1997 Fracmaster held 50% of Samotlor Services, with gross production over 15,000 b/d.</p></div>
+      <div class="card"><span class="tag">1996 – 1997</span><h3>China: 720 wells</h3><p>A C$50 million deal with China National Petroleum Corp. in Shandong province — up to 720 wells, a C$10 million truck fleet sent in late 1994, and final approval for the operational phase on 12 June 1997.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="fall">
+  <div class="wrap">
+    <p class="kicker">Rise &amp; fall</p>
+    <h2>From a billion dollars to fifty cents</h2>
+    <p class="lede">Shares began trading in fall 1993 (symbol CFC), then listed on the NYSE on 8 April 1998 as FMA. In fall 1997 the company was worth more than C$1 billion. Then came the one-two punch: Russia's currency crisis in August 1998 and oil below US$11 a barrel that December.</p>
+    <div class="chartbox">
+      <h3>Profit and loss, C$ millions</h3>
+      <p class="small">Reported results: 1996 and 1997 profits, then the 1998 loss — which included a C$126 million write-down of Russian assets. Source: company results as reported by the Globe and Mail / Financial Post, 1999.</p>
+      <svg viewBox="0 0 640 300" role="img" aria-label="Bar chart: profit C$21.9 million in 1996, C$43.4 million in 1997, loss of C$137.3 million in 1998">
+        <line x1="70" y1="150" x2="610" y2="150" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="120" y="118" width="110" height="32" fill="#17452f"/>
+        <rect x="275" y="86" width="110" height="64" fill="#e9a90b"/>
+        <rect x="430" y="150" width="110" height="118" fill="#c1272d"/>
+        <text x="175" y="106" text-anchor="middle" font-weight="800" fill="currentColor">+C$21.9M</text>
+        <text x="330" y="74" text-anchor="middle" font-weight="800" fill="currentColor">+C$43.4M</text>
+        <text x="485" y="288" text-anchor="middle" font-weight="800" fill="currentColor">−C$137.3M</text>
+        <text x="175" y="172" text-anchor="middle" fill="currentColor">1996</text>
+        <text x="330" y="172" text-anchor="middle" fill="currentColor">1997</text>
+        <text x="485" y="140" text-anchor="middle" fill="#ffffff" font-weight="700">1998</text>
+        <text x="70" y="140" fill="currentColor" font-size="12">C$0</text>
+      </svg>
+    </div>
+    <div class="grid">
+      <div class="card"><h3>The instalment that failed</h3><p>Balm's September 1997 sale was paid in instalments: C$9.75 a share up front, C$9.75 due a year later. On 9 September 1998, holders of over two-thirds of the receipts defaulted, leaving Balm holding roughly 40–43% again — and suing for the balance. A week later Fracmaster put itself up for sale. No binding bids came.</p></div>
+      <div class="card"><h3>CCAA protection — March 1999</h3><p>Protection under the Companies' Creditors Arrangement Act was granted 18 March 1999 (some reports say 19 March — the dates conflict in the record, so both are noted). Debt topped C$130 million. Arthur Andersen Inc. was monitor, then receiver/manager.</p></div>
+      <div class="card"><h3>Sold to BJ Services</h3><p>After a contested court fight with UTI Energy, Calfrac and Balm's group, Justice Paperny approved the sale to BJ Services of Houston on 21 May 1999. It closed 28 June 1999 for US$78.5 million total. The Alberta Court of Appeal dismissed all four appeals on 9 June 1999 (<i>UTI Energy Corp. v. Fracmaster Ltd.</i>, 1999 ABCA 178). Shareholders got nothing.</p></div>
+    </div>
+    <div class="note"><p>The Calgary Herald, 8 June 1999: the sale meant “the end of the 23-year-old Fracmaster name from the Canadian oilpatch” — “the technology and expertise it has will join BJ Services.” The share price told the same story: a 52-week high of C$20, a last trade of C$0.50.</p></div>
+  </div>
+</section>
+
+<section class="sec" id="timeline">
+  <div class="wrap">
+    <p class="kicker">Timeline</p>
+    <h2>1976 – 1999, and after</h2>
+    <ol class="tl">
+      <li><time>5 Apr 1976</time><p><b>Incorporated.</b> Canadian Fracmasters Limited, federally incorporated in Calgary; office at 335 8th Ave SW. Renamed Canadian Fracmaster Ltd. on 21 Nov 1977.</p></li>
+      <li><time>30 Mar 1989</time><p><b>First Soviet joint venture.</b> Uganskfracmaster formed with Uganskneftegas and Shell to stimulate wells in Soviet oil and gas fields.</p></li>
+      <li><time>25 Mar 1991</time><p><b>Profit in Siberia.</b> Oil &amp; Gas Journal: the venture has recouped its investment; ~10,000 b/d of production gains.</p></li>
+      <li><time>29 Jul 1991</time><p><b>Samotlor.</b> Samotlor PanCanadian Fracmaster Services announced for the Tyumen region of western Siberia.</p></li>
+      <li><time>Fall 1993</time><p><b>Public company.</b> Shares begin trading on the Toronto, Montreal and Alberta exchanges, symbol CFC.</p></li>
+      <li><time>9 Sep 1997</time><p><b>The Balm sale.</b> Alfred Balm sells his 67.5% stake by instalment receipts (~C$563 million total). Market value tops C$1 billion that fall.</p></li>
+      <li><time>8 Apr 1998</time><p><b>NYSE listing.</b> Fracmaster lists in New York as FMA; ~1,000 employees worldwide; 1997 profit C$43.4 million.</p></li>
+      <li><time>Aug – Dec 1998</time><p><b>The crash.</b> Russia's currency crisis; oil below US$11/bbl. The instalment payment fails 9 September. 1998 loss: C$137.3 million.</p></li>
+      <li><time>18 Mar 1999</time><p><b>CCAA protection.</b> Court protection granted; Arthur Andersen appointed monitor. Over 250 jobs had already been cut.</p></li>
+      <li><time>21 May 1999</time><p><b>BJ Services wins.</b> Court approves the BJ sale (US$80 million headline). Appeals dismissed 9 June 1999 — 1999 ABCA 178; FTC clearance the same day.</p></li>
+      <li><time>28 Jun 1999</time><p><b>Closed — and reborn.</b> BJ Services completes the purchase (US$78.5 million). The same day, ex-Fracmaster people co-found Calfrac Well Services.</p></li>
+      <li><time>2 Jul 2001</time><p><b>Struck off.</b> The Alberta corporate shell is struck from the registry (unofficial index — verify officially). The name lives on in Russia as ZAO Samotlor Fracmaster Services into the late 2000s.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec alt" id="gallery">
+  <div class="wrap">
+    <p class="kicker">Photo gallery</p>
+    <h2>From the people who were there</h2>
+    <p class="lede">468 photos downloaded from the <a href="https://www.facebook.com/groups/52396026847/" target="_blank" rel="noopener">Canadian Fracmaster Ltd. Facebook group</a> — the reunion home of former employees of Canadian Fracmaster, American Fracmaster, Toolmaster, Drillmaster and the joint ventures (952 members; 402 posts scraped, 233 of them photo posts). Trucks, crews, yards, Siberia and keepsakes, shared by the hands themselves. Tap any photo to see it full-size.</p>
+    <p class="small">Credit: photos remain the property of the group members who posted them; they're gathered here for tribute and identification. Specific posters weren't recorded for each downloaded file, so credit is given to the group as a whole — if one of these is yours, the credit belongs to you.</p>
+    <div class="filters" role="group" aria-label="Gallery filters">
+      <button type="button" data-filter="all" aria-pressed="true">All photos (478)</button>
+      <button type="button" data-filter="group" aria-pressed="false">Group photos (468)</button>
+      <button type="button" class="souv" data-filter="souvenir" aria-pressed="false">Souvenirs (10)</button>
+    </div>
+    <div class="gal" id="gal"></div>
+    <p class="small" id="galcount" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="sec" id="souvenirs">
+  <div class="wrap">
+    <p class="kicker">Souvenirs &amp; keepsakes</p>
+    <h2>Buckles, caps and a yellow knife</h2>
+    <p class="lede">Ten souvenir pictures tracked down from eBay listings, Etsy, a vintage shop, an auction and the Canadian Energy Museum — use the “Souvenirs” filter in the gallery above to see them all together. The standouts: the solid-brass 10th Anniversary 1976–1986 buckle, the “Safe Driving — One Year” buckle, and the museum's yellow Victorinox knife lettered “FRACMASTER, Industrial &amp; Pipeline.”</p>
+    <div class="note"><p><b>Please note:</b> these are seller, museum and auction photos — not Herb's property and not cleared for commercial use. Nothing was bought. Only one confirmed live eBay listing was found (a vintage American Fracmaster patch, Odessa, Texas, C$20.97, seller 3CollectorsTreasures — its photo couldn't be retrieved). No eBay listings exist right now for Fracmaster mugs, pins, lighters, keychains, pens, stickers, coveralls or jackets.</p></div>
+  </div>
+</section>
+
+<section class="sec alt" id="videos">
+  <div class="wrap">
+    <p class="kicker">Videos</p>
+    <h2>Watch them in the group</h2>
+    <p class="lede">Five videos live in the Facebook group. Facebook offers no download for them, so they aren't embedded here — each card opens the original post, where they play fine.</p>
+    <div class="grid">
+      <div class="card vid"><a class="play" href="https://facebook.com/groups/52396026847/permalink/10159471426991848/" target="_blank" rel="noopener" aria-label="Watch on Facebook: Nov 1993 Frac Family magazine">▶</a><div><h3>Nov 1993 Frac Family magazine</h3><p>1:30 · Posted by Patrick Lockhart</p></div></div>
+      <div class="card vid"><a class="play" href="https://facebook.com/groups/52396026847/permalink/10156256828181848/" target="_blank" rel="noopener" aria-label="Watch on Facebook: Basketball, Team CFM Canada vs Russia">▶</a><div><h3>Basketball — Team CFM Canada vs Russia</h3><p>6:40 · Posted by Murray Gillis</p></div></div>
+      <div class="card vid"><a class="play" href="https://facebook.com/groups/52396026847/permalink/10156256508201848/" target="_blank" rel="noopener" aria-label="Watch on Facebook: 1989 first frac under the joint venture, Moscow TV">▶</a><div><h3>1989 — first frac under the JV, Moscow TV</h3><p>13:38 · Posted by Murray Gillis</p></div></div>
+      <div class="card vid"><a class="play" href="https://facebook.com/groups/52396026847/permalink/10156256401971848/" target="_blank" rel="noopener" aria-label="Watch on Facebook: CBC TV news story">▶</a><div><h3>CBC TV news story</h3><p>2:31 · Posted by Murray Gillis</p></div></div>
+      <div class="card vid"><a class="play" href="https://facebook.com/groups/52396026847/permalink/10156256329836848/" target="_blank" rel="noopener" aria-label="Watch on Facebook: Carl Larsen lunch in Russia">▶</a><div><h3>Carl Larsen lunch in Russia</h3><p>0:26 · Posted by Murray Gillis</p></div></div>
+      <div class="card"><h3>The group itself</h3><p>402 posts going back to 2009 — photos, memories and old friends finding each other again.</p><p><a href="https://www.facebook.com/groups/52396026847/" target="_blank" rel="noopener">Canadian Fracmaster Ltd. group on Facebook →</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="legacy">
+  <div class="wrap">
+    <p class="kicker">Legacy</p>
+    <h2>What carried on</h2>
+    <div class="grid">
+      <div class="card"><h3>Calfrac Well Services</h3><p>Founded 28 June 1999 — the very day the BJ sale closed — by Ronald P. Mathison, Douglas Ramsay, Gordon Dibb and Robert Roberts. Ramsay had run Fracmaster until 1994. The Canadian fracturing business, in new colours, carried straight on.</p></div>
+      <div class="card"><h3>BJ Services → Baker Hughes</h3><p>Fracmaster's technology, expertise and Russian operations joined BJ Services, later part of Baker Hughes. In Siberia, ZAO Samotlor Fracmaster Services kept the name working for TNK-BP into the late 2000s.</p></div>
+      <div class="card"><h3>The group &amp; the gear</h3><p>The name never really left the patch: the Facebook group still trades photos and stories, and the buckles, caps and yellow-handled tools still turn up in kitchens, garages and museum cases — like the Canadian Energy Museum's knife, playing cards and well tree caps in the gallery above.</p></div>
+    </div>
+    <details>
+      <summary>Open questions this page won't guess at</summary>
+      <p>The founding story (co-founders, first yard, first customers) is not in any source found. The “Fracmaster Tower” building history — when it got the name, who built it — is unverified; only the address is confirmed. No dedicated Fracmaster fonds was found at Glenbow / University of Calgary Archives, Alberta On Record or the Provincial Archives of Alberta — that's a negative search result, not proof nothing exists; the Glenbow live search was blocked by a CAPTCHA. Figures that conflict in the record (CCAA date 18 vs 19 March 1999; employee counts of 1,000 / 667 / ~630 at different dates) are shown with their dates rather than smoothed over.</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec alt" id="sources">
+  <div class="wrap">
+    <p class="kicker">Sources</p>
+    <h2>Where this history comes from</h2>
+    <p class="lede">Researched 21 November 2026 from court records, regulators, trade press and newspaper reporting. 1999 newspaper stories are cited to the original papers; several were read via reprints because the originals are paywalled.</p>
+    <ul class="srcs">
+      <li><a href="https://ised-isde.canada.ca/cc/lgcy/fdrlCrpDtls.html?corpId=977098" target="_blank" rel="noopener">Corporations Canada 097709-8</a> — incorporation, 5 Apr 1976 (verified live).</li>
+      <li><a href="https://www.ogj.com/general-interest/companies/article/17237865/canadian-soviet-joint-venture-turns-a-profit" target="_blank" rel="noopener">Oil &amp; Gas Journal, 25 Mar 1991</a> — Soviet JV turns a profit (verified live).</li>
+      <li><a href="https://www.ogj.com/home/article/17239052/canadian-us-firms-form-soviet-ventures" target="_blank" rel="noopener">Oil &amp; Gas Journal, 29 Jul 1991</a> — Samotlor PanCanadian venture (verified live).</li>
+      <li><a href="https://onepetro.org/PETSOCATM/proceedings-abstract/90ATM/90ATM/PETSOC-90-23/5779" target="_blank" rel="noopener">OnePetro PETSOC-90-23</a> — Uganskfracmaster paper, June 1990 (verified live).</li>
+      <li><a href="https://www.ftc.gov/legal-library/browse/early-termination-notices/19993012" target="_blank" rel="noopener">FTC HSR Early Termination Notice 19993012</a>, 9 Jun 1999 — BJ / Fracmaster (verified live).</li>
+      <li><i>UTI Energy Corp. v. Fracmaster Ltd.</i>, 1999 ABCA 178 — appeals dismissed 9 Jun 1999; companion: <i>Royal Bank of Canada v. Fracmaster Ltd.</i> (1999), 245 A.R. 138 (QB).</li>
+      <li>BJ Services Co. Form 10-Q, filed 16 Aug 1999 — closing terms, US$78.5M, 28 Jun 1999.</li>
+      <li>Calgary Herald (Chris Varcoe), 8 Jun 1999; Globe and Mail (Steven Chase), 29 Apr 1999; Financial Post profile, 21 Apr 1998 — rise, fall and end of the name.</li>
+      <li><a href="http://www.newswire.ca/news-releases/calfrac-announces-retirement-of-co-founder-and-chief-executive-officer-douglas-r-ramsay-at-the-end-of-2013---fernando-aguilar-named-successor-512415301.html" target="_blank" rel="noopener">Calfrac news release, 14 May 2013</a> — Doug Ramsay, Fracmaster president to 1994 (verified live).</li>
+      <li>Government of Canada, EBRD Report 1992 — Samotlor (US$10M) and Vasyugan (US$20M) loans.</li>
+      <li>Canadian Fracmaster Ltd. Facebook group — 402 posts scraped Nov 2026; 468 photos and 5 video links in the gallery above.</li>
+      <li>Souvenir inventory, Nov 2026 — eBay, Etsy, Drop Spot Vintage, Beck Auctions / iCollector, Canadian Energy Museum (CatalogIt).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p class="lede">Have a story, photo, or correction to share? We'd love to hear from you.</p>
+    <form class="cform" action="https://formspree.io/f/mdeaojky" method="POST">
+      <input type="hidden" name="_subject" value="Frac Master Tribute — Website Inquiry" />
+      <label>Name
+        <input type="text" name="name" autocomplete="name" required />
+      </label>
+      <label>Email
+        <input type="email" name="email" autocomplete="email" required />
+      </label>
+      <label>Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="wordmark">FRACMASTER<small>CANADIAN FRACMASTER LTD. · 1976 – 1999</small></span>
+    <p style="max-width:65ch">A tribute to the crews of Canadian Fracmaster Ltd. — Calgary to Siberia, 1976–1999. Built from court records, trade press, newspaper archives, the Canadian Energy Museum, and the photos and memories of the Canadian Fracmaster Ltd. Facebook group. If you wore the green coveralls, this one's yours.</p>
+    <div style="margin-top:24px;border-top:1px solid rgba(246,201,14,.35);padding-top:18px">
+      <p style="margin:0;line-height:1.7;max-width:65ch">
+        Put together by Herb Hopkins, Red Deer, Alberta.<br>
+        Got a photo, a story or a correction for this page? Share it in the
+        <a href="https://www.facebook.com/groups/52396026847/" target="_blank" rel="noopener">Canadian Fracmaster Ltd. Facebook group</a>
+        — that's where the crew gathers, and where most of these pictures came from.
+      </p>
+    </div>
+    <p class="small" style="color:#c9c3ab;margin-top:20px">History researched November 2026. Photos © their original posters and holders, shown for tribute and identification.</p>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <img id="lbimg" alt="" />
+  <div class="lcap" id="lbcap"></div>
+  <div class="row">
+    <button type="button" id="lbprev">← Prev</button>
+    <button type="button" class="ghost" id="lbclose">Close</button>
+    <button type="button" id="lbnext">Next →</button>
+  </div>
+</div>
+
+<script>
+var SOUVENIRS = [
+ {f:"belt-buckle-truck-silver-1.jpg", t:"Belt buckle — frac truck", c:"Silver-toned buckle: tank truck with “CANADIAN FRACMASTER WELL STIMULATION” and big FRACMASTER lettering.", s:"eBay image — original listing not recovered"},
+ {f:"belt-buckle-truck-silver-2.jpg", t:"Belt buckle — frac truck, second view", c:"Second photo of a similar silver truck buckle, different angle and condition.", s:"eBay image — original listing not recovered"},
+ {f:"belt-buckle-safe-driving-one-year.jpg", t:"Belt buckle — Safe Driving, One Year", c:"Oval brass buckle, “SAFE DRIVING / ONE YEAR” with FRACMASTER cartouche.", s:"Via eBay category page"},
+ {f:"belt-buckle-10th-anniversary-1976-1986-1.jpg", t:"Belt buckle — 10th Anniversary 1976–1986", c:"Solid brass, globe and trucks. The most-listed Fracmaster souvenir found.", s:"Etsy — CA$85.00 and CA$34.99 listings; also Kijiji Calgary $35 (Nov 2026)"},
+ {f:"cap-yellow-corduroy-red-fracmaster-1.jpg", t:"Cap — yellow corduroy", c:"Bright yellow corduroy cap, hexagonal patch with red border and FRACMASTER in bold red.", s:"eBay image — original listing not recovered"},
+ {f:"hat-trucker-cementing-services-yellow-white-1.jpg", t:"Trucker hat — Cementing Services", c:"Yellow/white snapback: “CANADIAN FRACMASTER LTD. / CEMENTING SERVICES” with yellow cementing trucks.", s:"Drop Spot Vintage"},
+ {f:"playing-cards-red-box-1.jpg", t:"Playing cards", c:"Red box and cards with yellow borders and the red FRACMASTER logo. Museum object — not for sale.", s:"Canadian Energy Museum"},
+ {f:"well-tree-caps-yellow-red-1.jpg", t:"Well tree caps", c:"Two bright yellow caps with red FRACMASTER lettering and stylised F. Museum object — not for sale.", s:"Canadian Energy Museum"},
+ {f:"pocket-knife-yellow-red-victorinox-1.jpg", t:"Victorinox pocket knife", c:"Yellow with red “FRACMASTER, INDUSTRIAL & PIPELINE” lettering. Object 2002.12.4, Mark Cathey Collection. Museum object — not for sale.", s:"Canadian Energy Museum"},
+ {f:"framed-photo-fracmaster-truck-1.jpg", t:"Framed photo — Fracmaster truck", c:"Framed photo of a vintage yellow/white well stimulation truck, lot 132.", s:"Beck Auctions / iCollector — bidding concluded"}
+];
+var SPECIAL = {
+ 14:"The crew — Fracmaster hands in green coveralls and red, yellow and white hard hats in front of a yellow pumper and tanks. The hero photo of this tribute.",
+ 21:"Still in the toolbox — a yellow FRACMASTER screwdriver, kept and carried decades on.",
+ 47:"Shared vintage post — 35mm slides of an early Canadian oilfield contractor's vans and rigs, passed on through the group.",
+ 75:"Kept all these years — a pocket knife lettered “CANADIAN FRACMASTER, ESTEVAN.”",
+ 78:"From the cab of the truck — Fracmaster's Carbon Dioxide Operator's Manual, cover still wearing the red logo.",
+ 80:"Fracmaster sales literature — the Multi-Set Isolation Tool marketing plan.",
+ 84:"Still in daily service — a FRACMASTER mug, coffee by the fire.",
+ 92:"The whole spread — a Fracmaster crew lined up in front of the yellow frac fleet and tanks.",
+ 97:"Shared by the group in remembrance — the memorial notice for Carey Todd Chilliak, who passed 8 September 2025.",
+ 160:"Kept in their bags — FRACMASTER lapel pins with the frac fleet across the bottom.",
+ 185:"Framed and kept — Les Margetak's letter of 9 July 1998 marking Fracmaster as the first company to drill 100 coiled-tubing horizontal underbalanced wells in Canada.",
+ 200:"Framed and kept — the whole crew lined up in front of the yard and the yellow fleet.",
+ 201:"A sticker and patch collection — Fracmaster, Toolmaster and the rest of the patch, all on one sheet.",
+ 202:"From the files — the Fastmaster-2X product data sheet.",
+ 203:"A hand-built model of a Fracmaster coiled tubing unit, yellow paint and all.",
+ 209:"The green coveralls from the back — red shoulder panels, yellow stripes, FRACMASTER across the shoulders.",
+ 211:"A cap collection — decades of Fracmaster lids gathered in one shot.",
+ 212:"A yellow Ugansk Fracmaster cap, kept from the Siberian joint venture.",
+ 213:"Cap patch close-up — Canadian Fracmaster Ltd., Fracturing Services, with the frac fleet stitched in.",
+ 215:"A frac treatment chart, kept from the job files.",
+ 219:"A 20th Anniversary cap — Canadian Fracmaster, 1976–1996.",
+ 220:"In the ditch — not every trip out to the lease went to plan.",
+ 223:"A pickup getting a lift — slung under a crane, wheels off the ground.",
+ 231:"A Russian fuel tanker on the Siberian job — “flammable” lettered in Cyrillic on the tank.",
+ 233:"A Fracmaster ring, kept and still worn.",
+ 245:"The 10th Anniversary 1976–1986 belt buckle, close up — the group's most-kept souvenir.",
+ 246:"A limited-edition plaque: “Fracmaster wishes to thank its employees and valued customers for 10 years of service.”",
+ 250:"Kept and still fired up — the big black Fracmaster crew BBQ, photographed in a backyard decades on.",
+ 251:"The Fracmaster BBQ from the other end — nameplate still on the lid.",
+ 252:"From the job box — three Fracmaster pressure gauges, faces still clear.",
+ 253:"Still in the plastic — a 10th Anniversary 1976–1986 commemorative belt buckle, never worn.",
+ 281:"Game worn — red-and-white Fracmaster hockey jerseys, numbers 7 and 17, laid out together.",
+ 283:"Close up — a Canadian Fracmaster Ltd. logo decal on red equipment.",
+ 288:"In the yard — a yellow Fracmaster pumper rigged up and ready to roll.",
+ 292:"On a muddy lease — hands in green coveralls and yellow hard hats around the iron.",
+ 297:"A Fracmaster golf ball, kept on the shelf — logo still sharp.",
+ 300:"From the sales literature — the Fracmaster A18000 cement bulker unit, red logo across the tank.",
+ 313:"The whole company on one box — Fracturing, Acidizing, Cementing, Industrial & Pipeline and Coiled Tubing, each with its own logo.",
+ 314:"A Fracturing Services trucker cap, shared at Christmas — “Mary Christmas, my friends!”",
+ 315:"From the Russia files — a floppy disk of Ugansk and Samotlor purchase orders, kept on Purchasing and Distribution Centre letterhead.",
+ 320:"A crew duffel bag in company colours — Canadian Fracmaster Ltd., Medicine Hat.",
+ 325:"Old hands, still getting together — three Fracmaster men at a backyard gathering.",
+ 336:"On the road to a job — a yellow tanker leading the pumpers down a muddy lease road.",
+ 341:"Two from the album — a hand catching a nap up on the iron, and an aerial of a rig on location.",
+ 343:"Halloween at the office — costumes at the desks, witch and all.",
+ 347:"Framed and kept — an aerial of a Fracmaster spread on location, presentation plaque and all.",
+ 349:"A Uganskfracmaster bag, both sides — English on one face, Cyrillic on the other, from the Siberian joint venture.",
+ 350:"A Happy New Year greeting shared in the group — a yellow Fracmaster pumper in the snow.",
+ 351:"A Uganskfracmaster Happy New Year greeting — the Siberian venture's name over the ball logo.",
+ 352:"Kept gear — “Pressure Performance” lettered across a red Fracmaster kit bag.",
+ 353:"A keeper's flat lay — Fracmaster lighters, a pen, a leather key fob, staff passes and pins, all still together.",
+ 354:"A business card kept all these years — Doug Taylor, Purchasing, Canadian Fracmaster Ltd., Calgary.",
+ 355:"Still earning its keep — a yellow Fracmaster pail on the beach, fishing rod at the ready.",
+ 356:"Two enamel pins — the Fracmaster stagecoach pin and The Fracmaster Group pin.",
+ 357:"Framed and kept — an aerial of a plant site with the Fracmaster spread on location.",
+ 358:"Part of a group panorama — the crew in front of the shipping container, Canadian flag side.",
+ 359:"Part of a group panorama — the crew in front of the shipping container, Russian flag side.",
+ 360:"The whole crew in front of the FRAC 2000 container — Russian and Canadian flags flying, three hands up top waving.",
+ 361:"The Engineers Handbook — National Oil Well Maintenance Co., issued by Canadian Fracmaster Ltd., Calgary, 1986.",
+ 362:"The same Engineers Handbook from the cover — the field bible, kept.",
+ 363:"A framed Fracmaster mirror — a pumper under the red logo.",
+ 364:"Close up — the mirror's pumper artwork and red FRACMASTER lettering.",
+ 365:"Framed and kept — a Twenty Year Service Award presented to Doug Taylor, August 1997.",
+ 366:"A pewter Fracmaster belt buckle — a pumper in relief over the wordmark.",
+ 367:"A Canadian Fracmaster Well Stimulation decal, colours still bright.",
+ 368:"A black Fracmaster jacket — the red wordmark over the division logos.",
+ 369:"The Fracmaster jacket laid out — same red wordmark, division patches below.",
+ 370:"From the job box — four Fracmaster pressure gauges, faces still clear.",
+ 371:"A yellow Fracmaster picker truck in the snow, chained up for winter work.",
+ 372:"The picker truck from the side — crane folded, ready to roll.",
+ 373:"Mud season on the lease — a tanker and iron in the slop.",
+ 375:"From above — the spread laid out in a gravel pit, bulker front and centre.",
+ 377:"Up top on a Samotlor Services tanker — the Siberian joint venture at work.",
+ 379:"A Fracmaster hand in a company cap, holding the newest arrival.",
+ 380:"Two hands mixing at the barrel — the unglamorous end of a frac job.",
+ 382:"Two hands under the FRACMASTER LTD. sign, pointing the finger — all in fun.",
+ 384:"A yellow Fracmaster pickup in front of the spread on location.",
+ 385:"Up on the iron — a hand standing tall on the pumper.",
+ 388:"A keeper's set — Safe Driving and 10th Anniversary buckles, a tooled leather buckle and a Fracmaster hockey puck.",
+ 390:"From above — tanks, silos and the spread laid out on location.",
+ 391:"A tooled leather Canadian Fracmaster Ltd. buckle, stitching and all.",
+ 392:"A white Fracmaster hard hat, kept clean.",
+ 393:"From Frac Family magazine — new hires at the Wainwright station, June 1993.",
+ 394:"A Frac Family magazine cover — the crew on the bumper cars, 1993.",
+ 395:"A yellow Fracmaster jacket — Well Stimulation patch on the chest, a name patch on the sleeve.",
+ 396:"Uganskfracmaster's gift to the children of Nefteyugansk, 1995 — the plaques, and the children's clinic they mark.",
+ 397:"Shared vintage post — an old Eskimo well-service truck, from the patch's earlier days.",
+ 398:"Shared vintage post — another Eskimo unit, from the black-and-white days.",
+ 399:"Shared vintage post — hands up on an Eskimo truck, summer in the patch.",
+ 400:"One case, two names — Fracmaster on one side, Toolmaster on the other.",
+ 401:"Fire damage — burnt-out units sitting in the yard.",
+ 402:"A flatbed loaded for the road, in a faded print from the early days.",
+ 403:"A brand-new red GMC cab-over at the dealer, driver posing proud.",
+ 404:"The Engineers Handbook — American Fracmaster Inc., fourth printing, 1984.",
+ 405:"The yellow Engineers Handbook binder, Fracmaster red on gold.",
+ 406:"Happy New Year 2016 — a red Kenworth in the snow, shared to the group.",
+ 407:"Brand-new coveralls still in the plastic, Djupvik workwear for the Russia crews.",
+ 408:"A gold Fracmaster cap, kept like new.",
+ 409:"Up on the pumper — a hand and a young helper on the deck.",
+ 410:"A Bulova watch with the Canadian Fracmaster Ltd. logo on the dial.",
+ 411:"A crew barbecue out back — coolers, a grill and a fine evening.",
+ 412:"The crew lined up in front of the truck for a group shot.",
+ 413:"The whole gang indoors — a soft-focus crew portrait.",
+ 414:"A Fracmaster cooler bag — “the CAN DO company.”",
+ 415:"A red Fracmaster duffel bag lettered for the Red Deer station.",
+ 416:"A yellow pumper unit parked up in the yard.",
+ 417:"“You call this a party!?” — a speech-bubble gag from a crew get-together.",
+ 418:"A crew-cab pickup after a wreck, front end folded up in the snow.",
+ 419:"The same wreck from the other side, the silos standing behind.",
+ 420:"At the controls — an operator in the frac van, gauges and iron behind him.",
+ 421:"A lease from across the field — rig, tanks and trailers under a big sky.",
+ 422:"Two hands squeezed into the cab at the control panel.",
+ 423:"Catching a nap in the cab between jobs, 1993.",
+ 424:"Asleep in the Fracmaster pickup — the door logo says whose truck it is.",
+ 425:"Night work — a pumper lit up on location (the print was shared sideways).",
+ 426:"Hooking up the CO2 tanker, vapour rolling off unit 20204.",
+ 427:"The spread at dusk, masts and trucks against the treeline.",
+ 428:"A hand posing in front of a big Fracmaster Kenworth, pilot flags on the bumper.",
+ 429:"A brass 4th Year Safety Award plate, Fracmaster logo etched in.",
+ 430:"A Zwilling Henckels knife set in its case — a safety-award gift.",
+ 431:"Moving a pipe trailer down the road with a dozer doing the pushing.",
+ 432:"A group post in memory of Johnny Kostiuk, April 2014.",
+ 433:"Two caps — a black 20-year cap beside a white Fracmaster one.",
+ 434:"A cut-crystal glass etched with the F logo.",
+ 435:"A decanter set etched “Fracmaster — 10 Years Safety,” poured and ready.",
+ 436:"Fracmaster boxer shorts — the logo all over, for the true believers.",
+ 437:"Five Russia-era caps — Samotlor, Vakh and Ugansk Fracmaster, plus Fracmaster Technical Services.",
+ 438:"Climbing up on the pumper, mud season on the lease.",
+ 439:"The crew gathered at a workbench between the trucks on location.",
+ 440:"From above — a full frac spread laid out in a forest clearing.",
+ 441:"Pumping on location — one unit rolling black smoke.",
+ 442:"The spread from the other end — pumpers, tanks and trees.",
+ 443:"From above — the whole spread ringed around three silos.",
+ 444:"A Fracmaster crane unit working in the snow among the spruce.",
+ 445:"Rigged up at the wellhead on a bright winter day.",
+ 446:"Air drilling — dust boiling off the rig in an open field.",
+ 447:"A downhole tool laid out on the grass, the crew standing by.",
+ 448:"A coiled tubing unit set up on a prairie lease.",
+ 449:"A Cemco service truck easing across a plank bridge over a creek — the patch's earlier days.",
+ 450:"The head-office telephone list, February 1995 — kept all these years, Samotlor, Vakh and Uganskfracmaster extensions and all.",
+ 451:"From the album — yellow pumpers and a white Fracmaster tanker axle-deep in the mud, spruce all around.",
+ 452:"A chewed-up drill bit, pulled from the hole and kept on the counter.",
+ 453:"A coiled tubing job in the bush — the Fracmaster crane, the CT unit and the white Firemaster truck.",
+ 454:"Winter work — a coiled tubing spread steaming in the snow, Canadian Fracmaster iron all around.",
+ 455:"Hands wrapping gear in plastic sheeting beside the Ford service truck, out in the field.",
+ 456:"Deep cold on the road — the truck's mirror thermometer reading close to −30.",
+ 457:"From a magazine profile of the company — the fleet lined up on location and a Well Stimulation unit (page 104).",
+ 458:"The facing page (105) — “…our real success story is our people,” with the head-office table and a spread rigged up by the red tanks.",
+ 459:"“Fracmaster in Russia 1989–1998” — yellow frac trucks and silos on a Siberian lease, with an inset winter shot of the crew at the iron. Shared by Alex Vilgan — one of the group's oldest photos, posted November 2010.",
+ 460:"On the log road — Fracmaster trucks crossing a corduroy road over the swamp, logs and black water alongside. Shared by Alex Vilgan, November 2010.",
+ 461:"From above — a full frac spread in deep snow, pumpers and blue and red tanks lined up on the lease. Shared by Andrew Clegg — one of the group's first photos, posted February 2010.",
+ 462:"In the cab — captioned “gifford” when Andrew Clegg shared it in February 2010.",
+ 463:"“Matrix pumper, bulk truck” — the spread small in a wide-open field, a pickup parked out front. Shared by Andrew Clegg, February 2010.",
+ 464:"“Bulk trucks” — two Fracmaster bulkers under the yellow silos, a rig standing behind. Shared by Andrew Clegg, February 2010.",
+ 465:"A yellow-and-white Fracmaster pumper on a frozen lease, winter sky behind. Shared by Andrew Clegg, February 2010.",
+ 466:"Unit 8201 — a yellow-and-white cab-over head-on, winter front buttoned up against the cold. Shared by Andrew Clegg, February 2010.",
+ 467:"The “cement twin” — a Fracmaster cement unit hooked up and waiting in the snow. Shared by Andrew Clegg, February 2010.",
+ 468:"Drilling at Zama — the Fracmaster crane truck and coiled tubing gear working a lease in the bush. Shared by Andrew Clegg, February 2010."
+};
+var ITEMS = [];
+for (var i=1;i<=468;i++){
+  var n = (i<10?"0":"")+i;
+  ITEMS.push({src:"assets/gallery/f"+n+".jpg", thumb:"assets/thumbs/f"+n+".jpg", kind:"group",
+    t:"Group archive photo "+i+" of 468",
+    c: SPECIAL[i] || "Trucks, crews, yards and keepsakes from the Fracmaster years.",
+    s:"Canadian Fracmaster Ltd. Facebook group"});
+}
+SOUVENIRS.forEach(function(x){ ITEMS.push({src:"assets/souvenirs/"+x.f, thumb:"assets/thumbs/s-"+x.f, kind:"souvenir", t:x.t, c:x.c, s:x.s}); });
+
+var gal = document.getElementById("gal");
+var visible = ITEMS.slice();
+function render(filter){
+  gal.innerHTML = "";
+  visible = ITEMS.filter(function(x){ return filter==="all" || x.kind===filter; });
+  visible.forEach(function(x, idx){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "gitem";
+    b.setAttribute("aria-label", "View larger: "+x.t);
+    var img = document.createElement("img");
+    img.src = x.thumb;
+    img.alt = x.t+" — "+x.c;
+    var cap = document.createElement("span"); cap.className = "cap";
+    var bt = document.createElement("b"); bt.textContent = x.t;
+    cap.appendChild(bt); cap.appendChild(document.createTextNode(x.kind==="souvenir" ? x.s : "Canadian Fracmaster Ltd. group"));
+    b.appendChild(img); b.appendChild(cap);
+    b.addEventListener("click", function(){ openLB(idx); });
+    gal.appendChild(b);
+  });
+  document.getElementById("galcount").textContent = "Showing "+visible.length+" of "+ITEMS.length+" photos.";
+}
+var filterBtns = document.querySelectorAll(".filters button");
+filterBtns.forEach(function(btn){
+  btn.addEventListener("click", function(){
+    filterBtns.forEach(function(x){ x.setAttribute("aria-pressed","false"); });
+    btn.setAttribute("aria-pressed","true");
+    render(btn.getAttribute("data-filter"));
+  });
+});
+render("all");
+
+var lb = document.getElementById("lb"), lbimg = document.getElementById("lbimg"), lbcap = document.getElementById("lbcap"), cur = 0, lastFocus = null;
+function openLB(idx){
+  cur = idx; lastFocus = document.activeElement; showLB(); lb.classList.add("open");
+  document.getElementById("lbclose").focus();
+}
+function showLB(){
+  var x = visible[cur];
+  lbimg.src = x.src; lbimg.alt = x.t+" — "+x.c;
+  lbcap.innerHTML = "";
+  var b = document.createElement("b"); b.textContent = x.t+". ";
+  lbcap.appendChild(b); lbcap.appendChild(document.createTextNode(x.c+" — Source: "+x.s+". ("+(cur+1)+" of "+visible.length+")"));
+}
+function step(d){ cur = (cur + d + visible.length) % visible.length; showLB(); }
+document.getElementById("lbnext").addEventListener("click", function(){ step(1); });
+document.getElementById("lbprev").addEventListener("click", function(){ step(-1); });
+document.getElementById("lbclose").addEventListener("click", closeLB);
+lb.addEventListener("click", function(e){ if(e.target===lb) closeLB(); });
+document.addEventListener("keydown", function(e){
+  if(!lb.classList.contains("open")) return;
+  if(e.key==="Escape") closeLB();
+  if(e.key==="ArrowRight") step(1);
+  if(e.key==="ArrowLeft") step(-1);
+});
+function closeLB(){ lb.classList.remove("open"); lbimg.removeAttribute("src"); if(lastFocus) lastFocus.focus(); }
+</script>
+</body>
+</html>
