@@ -243,11 +243,14 @@ ul.srcs li{margin-bottom:8px;break-inside:avoid;font-size:.92rem}
   <div class="wrap">
     <p class="kicker">Photo gallery</p>
     <h2>From the people who were there</h2>
-    <p class="lede">468 photos downloaded from the <a href="https://www.facebook.com/groups/52396026847/" target="_blank" rel="noopener">Canadian Fracmaster Ltd. Facebook group</a> — the reunion home of former employees of Canadian Fracmaster, American Fracmaster, Toolmaster, Drillmaster and the joint ventures (952 members; 402 posts scraped, 233 of them photo posts). Trucks, crews, yards, Siberia and keepsakes, shared by the hands themselves. Tap any photo to see it full-size.</p>
+    <p class="lede">468 photos downloaded from the <a href="https://www.facebook.com/groups/52396026847/" target="_blank" rel="noopener">Canadian Fracmaster Ltd. Facebook group</a> — the reunion home of former employees of Canadian Fracmaster, American Fracmaster, Toolmaster, Drillmaster and the joint ventures (952 members; 402 posts scraped, 233 of them photo posts). Trucks, crews, yards, Siberia and keepsakes, shared by the hands themselves. Tap any photo to see it full-size. They&rsquo;re grouped with the equipment and the crews first, then the papers, stickers and keepsakes, then the people &mdash; use the buttons to jump to each group.</p>
     <p class="small">Credit: photos remain the property of the group members who posted them; they're gathered here for tribute and identification. Specific posters weren't recorded for each downloaded file, so credit is given to the group as a whole — if one of these is yours, the credit belongs to you.</p>
     <div class="filters" role="group" aria-label="Gallery filters">
       <button type="button" data-filter="all" aria-pressed="true">All photos (478)</button>
       <button type="button" data-filter="group" aria-pressed="false">Group photos (468)</button>
+      <button type="button" data-filter="equip" aria-pressed="false">Equipment &amp; crews (204)</button>
+      <button type="button" data-filter="paper" aria-pressed="false">Papers, stickers &amp; keepsakes (205)</button>
+      <button type="button" data-filter="people" aria-pressed="false">People (59)</button>
       <button type="button" class="souv" data-filter="souvenir" aria-pressed="false">Souvenirs (10)</button>
     </div>
     <div class="gal" id="gal"></div>
@@ -538,21 +541,49 @@ var SPECIAL = {
  467:"The “cement twin” — a Fracmaster cement unit hooked up and waiting in the snow. Shared by Andrew Clegg, February 2010.",
  468:"Drilling at Zama — the Fracmaster crane truck and coiled tubing gear working a lease in the bush. Shared by Andrew Clegg, February 2010."
 };
+var ORDER_A = [6, 7, 8, 9, 14, 17, 18, 20, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46,
+  47, 48, 49, 50, 53, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 79, 81, 92,
+  104, 106, 107, 108, 116, 118, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 134, 135, 136,
+  138, 139, 149, 150, 151, 161, 163, 167, 169, 175, 177, 180, 182, 183, 187, 188, 189, 192, 193, 194,
+  195, 197, 198, 200, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232,
+  234, 236, 237, 238, 239, 240, 241, 242, 243, 247, 288, 290, 291, 292, 293, 294, 295, 322, 327, 328,
+  329, 330, 336, 341, 347, 348, 357, 358, 359, 360, 371, 372, 373, 374, 375, 376, 377, 378, 380, 381,
+  383, 384, 385, 389, 390, 397, 398, 399, 401, 402, 403, 409, 412, 416, 418, 419, 420, 421, 422, 423,
+  424, 425, 426, 427, 428, 431, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 451, 453,
+  454, 455, 456, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468];
+var ORDER_B = [1, 2, 3, 4, 5, 10, 11, 12, 13, 15, 19, 21, 22, 23, 24, 26, 27, 28, 51, 52, 54, 55, 56, 75, 76, 78,
+  80, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 105,
+  109, 110, 111, 112, 113, 114, 115, 117, 132, 133, 137, 140, 141, 142, 143, 144, 145, 152, 153, 154,
+  155, 156, 157, 158, 160, 162, 164, 165, 170, 171, 173, 174, 176, 178, 179, 181, 184, 185, 186, 190,
+  191, 199, 201, 202, 203, 204, 205, 208, 209, 211, 212, 213, 214, 215, 219, 233, 245, 246, 248, 250,
+  251, 252, 253, 281, 282, 283, 284, 285, 286, 287, 289, 296, 297, 298, 299, 300, 301, 302, 303, 304,
+  305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 323, 324, 331,
+  333, 334, 335, 337, 338, 339, 340, 349, 350, 351, 352, 353, 354, 355, 356, 361, 362, 363, 364, 365,
+  366, 367, 368, 369, 370, 386, 387, 388, 391, 392, 393, 394, 395, 396, 400, 404, 405, 406, 407, 408,
+  410, 414, 415, 417, 429, 430, 432, 433, 434, 435, 436, 437, 450, 452, 457, 458];
+var ORDER_C = [16, 25, 74, 77, 119, 120, 146, 147, 148, 159, 166, 168, 172, 196, 206, 207, 210, 235, 244, 249, 254,
+  255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274,
+  275, 276, 277, 278, 279, 280, 325, 326, 332, 342, 343, 344, 345, 346, 379, 382, 411, 413];
+var ORDER = ORDER_A.concat(ORDER_B, ORDER_C);
+var CAT = {};
+ORDER_A.forEach(function(i){ CAT[i]="equip"; });
+ORDER_B.forEach(function(i){ CAT[i]="paper"; });
+ORDER_C.forEach(function(i){ CAT[i]="people"; });
 var ITEMS = [];
-for (var i=1;i<=468;i++){
+ORDER.forEach(function(i){
   var n = (i<10?"0":"")+i;
-  ITEMS.push({src:"assets/gallery/f"+n+".jpg", thumb:"assets/thumbs/f"+n+".jpg", kind:"group",
+  ITEMS.push({src:"assets/gallery/f"+n+".jpg", thumb:"assets/thumbs/f"+n+".jpg", kind:"group", cat:CAT[i],
     t:"Group archive photo "+i+" of 468",
     c: SPECIAL[i] || "Trucks, crews, yards and keepsakes from the Fracmaster years.",
     s:"Canadian Fracmaster Ltd. Facebook group"});
-}
+});
 SOUVENIRS.forEach(function(x){ ITEMS.push({src:"assets/souvenirs/"+x.f, thumb:"assets/thumbs/s-"+x.f, kind:"souvenir", t:x.t, c:x.c, s:x.s}); });
 
 var gal = document.getElementById("gal");
 var visible = ITEMS.slice();
 function render(filter){
   gal.innerHTML = "";
-  visible = ITEMS.filter(function(x){ return filter==="all" || x.kind===filter; });
+  visible = ITEMS.filter(function(x){ return filter==="all" || x.kind===filter || x.cat===filter; });
   visible.forEach(function(x, idx){
     var b = document.createElement("button");
     b.type = "button"; b.className = "gitem";
