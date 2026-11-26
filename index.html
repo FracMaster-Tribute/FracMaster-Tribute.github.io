@@ -101,7 +101,7 @@ nav.toc a:hover{background:var(--chip)}
 /* FOOTER */
 footer{background:var(--green-deep);color:#e9e5d5;padding:44px 0 54px}
 footer a{color:var(--yellow)}
-footer .wordmark{box-shadow:5px 5px 0 var(--red)}
+footer .wordmark{box-shadow:5px 5px 0 var(--red)} footer .visitor-counter{margin-top:1.5rem;text-align:center} footer .visitor-counter .visitor-label{font-family:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:1.05rem;font-weight:700;color:var(--gold);margin:0 0 .35rem} footer .visitor-counter a{display:inline-block}
 details{border:1px solid var(--line);background:var(--card);border-radius:6px;padding:6px 18px;margin-top:14px}
 summary{font-weight:800;cursor:pointer;padding:10px 0}
 ul.srcs{columns:1;padding-left:20px} @media(min-width:800px){ul.srcs{columns:2}}
@@ -243,14 +243,14 @@ ul.srcs li{margin-bottom:8px;break-inside:avoid;font-size:.92rem}
   <div class="wrap">
     <p class="kicker">Photo gallery</p>
     <h2>From the people who were there</h2>
-    <p class="lede">521 photos in all: 468 downloaded from the <a href="https://www.facebook.com/groups/52396026847/" target="_blank" rel="noopener">Canadian Fracmaster Ltd. Facebook group</a> — the reunion home of former employees of Canadian Fracmaster, American Fracmaster, Toolmaster, Drillmaster and the joint ventures (952 members; 402 posts scraped, 233 of them photo posts) — plus 53 more cropped out of photo-book pages, so the pictures inside them stand on their own. Trucks, crews, yards, Siberia and keepsakes, shared by the hands themselves. Tap any photo to see it full-size. They&rsquo;re grouped with the equipment and the crews first, then the papers, stickers and keepsakes, then the people &mdash; use the buttons to jump to each group.</p>
+    <p class="lede">575 photos in all: 457 downloaded from the <a href="https://www.facebook.com/groups/52396026847/" target="_blank" rel="noopener">Canadian Fracmaster Ltd. Facebook group</a> — the reunion home of former employees of Canadian Fracmaster, American Fracmaster, Toolmaster, Drillmaster and the joint ventures (952 members; 402 posts scraped, 233 of them photo posts) — plus 118 more cropped out of photo-book pages, so the pictures inside them stand on their own. Trucks, crews, yards, Siberia and keepsakes, shared by the hands themselves. Tap any photo to see it full-size. They&rsquo;re grouped with the equipment and the crews first, then the papers, stickers and keepsakes, then the people &mdash; use the buttons to jump to each group.</p>
     <p class="small">Credit: photos remain the property of the group members who posted them; they're gathered here for tribute and identification. Specific posters weren't recorded for each downloaded file, so credit is given to the group as a whole — if one of these is yours, the credit belongs to you.</p>
     <div class="filters" role="group" aria-label="Gallery filters">
-      <button type="button" data-filter="all" aria-pressed="true">All photos (531)</button>
-      <button type="button" data-filter="group" aria-pressed="false">Group photos (521)</button>
-      <button type="button" data-filter="equip" aria-pressed="false">Equipment &amp; crews (236)</button>
-      <button type="button" data-filter="paper" aria-pressed="false">Papers, stickers &amp; keepsakes (205)</button>
-      <button type="button" data-filter="people" aria-pressed="false">People (80)</button>
+      <button type="button" data-filter="all" aria-pressed="true">All photos (585)</button>
+      <button type="button" data-filter="group" aria-pressed="false">Group photos (575)</button>
+      <button type="button" data-filter="equip" aria-pressed="false">Equipment &amp; crews (246)</button>
+      <button type="button" data-filter="paper" aria-pressed="false">Papers, stickers &amp; keepsakes (198)</button>
+      <button type="button" data-filter="people" aria-pressed="false">People (131)</button>
       <button type="button" class="souv" data-filter="souvenir" aria-pressed="false">Souvenirs (10)</button>
     </div>
     <div class="gal" id="gal"></div>
@@ -315,7 +315,7 @@ ul.srcs li{margin-bottom:8px;break-inside:avoid;font-size:.92rem}
       <li>Calgary Herald (Chris Varcoe), 8 Jun 1999; Globe and Mail (Steven Chase), 29 Apr 1999; Financial Post profile, 21 Apr 1998 — rise, fall and end of the name.</li>
       <li><a href="http://www.newswire.ca/news-releases/calfrac-announces-retirement-of-co-founder-and-chief-executive-officer-douglas-r-ramsay-at-the-end-of-2013---fernando-aguilar-named-successor-512415301.html" target="_blank" rel="noopener">Calfrac news release, 14 May 2013</a> — Doug Ramsay, Fracmaster president to 1994 (verified live).</li>
       <li>Government of Canada, EBRD Report 1992 — Samotlor (US$10M) and Vasyugan (US$20M) loans.</li>
-      <li>Canadian Fracmaster Ltd. Facebook group — 402 posts scraped Nov 2026; 468 photos and 5 video links, plus 53 photos cropped out of photo-book pages, in the gallery above.</li>
+      <li>Canadian Fracmaster Ltd. Facebook group — 402 posts scraped Nov 2026; 457 photos and 5 video links, plus 118 photos cropped out of photo-book pages, in the gallery above.</li>
       <li>Souvenir inventory, Nov 2026 — eBay, Etsy, Drop Spot Vintage, Beck Auctions / iCollector, Canadian Energy Museum (CatalogIt).</li>
     </ul>
   </div>
@@ -355,6 +355,7 @@ ul.srcs li{margin-bottom:8px;break-inside:avoid;font-size:.92rem}
       </p>
     </div>
     <p class="small" style="color:#c9c3ab;margin-top:20px">History researched November 2026. Photos © their original posters and holders, shown for tribute and identification.</p>
+  <div class="visitor-counter"><p class="visitor-label">Visitors</p> <!-- hitwebcounter Code START --> <a href="https://www.hitwebcounter.com/" target="_blank" rel="noopener"><img src="https://www.hitwebcounter.com/counter/counter.php?page=21529765&style=0021&nbdigits=5&type=page" alt="Visitor counter" decoding="async" style="border:0;max-width:100%;height:auto;" /></a> <!-- hitwebcounter Code END --></div>
   </div>
 </footer>
 
@@ -384,7 +385,6 @@ var SOUVENIRS = [
 var SPECIAL = {
  14:"The crew — Fracmaster hands in green coveralls and red, yellow and white hard hats in front of a yellow pumper and tanks. The hero photo of this tribute.",
  21:"Still in the toolbox — a yellow FRACMASTER screwdriver, kept and carried decades on.",
- 47:"Shared vintage post — 35mm slides of an early Canadian oilfield contractor's vans and rigs, passed on through the group.",
  75:"Kept all these years — a pocket knife lettered “CANADIAN FRACMASTER, ESTEVAN.”",
  78:"From the cab of the truck — Fracmaster's Carbon Dioxide Operator's Manual, cover still wearing the red logo.",
  80:"Fracmaster sales literature — the Multi-Set Isolation Tool marketing plan.",
@@ -464,8 +464,6 @@ var SPECIAL = {
  390:"From above — tanks, silos and the spread laid out on location.",
  391:"A tooled leather Canadian Fracmaster Ltd. buckle, stitching and all.",
  392:"A white Fracmaster hard hat, kept clean.",
- 393:"From Frac Family magazine — new hires at the Wainwright station, June 1993.",
- 394:"A Frac Family magazine cover — the crew on the bumper cars, 1993.",
  395:"A yellow Fracmaster jacket — Well Stimulation patch on the chest, a name patch on the sleeve.",
  396:"Uganskfracmaster's gift to the children of Nefteyugansk, 1995 — the plaques, and the children's clinic they mark.",
  397:"Shared vintage post — an old Eskimo well-service truck, from the patch's earlier days.",
@@ -528,8 +526,6 @@ var SPECIAL = {
  454:"Winter work — a coiled tubing spread steaming in the snow, Canadian Fracmaster iron all around.",
  455:"Hands wrapping gear in plastic sheeting beside the Ford service truck, out in the field.",
  456:"Deep cold on the road — the truck's mirror thermometer reading close to −30.",
- 457:"From a magazine profile of the company — the fleet lined up on location and a Well Stimulation unit (page 104).",
- 458:"The facing page (105) — “…our real success story is our people,” with the head-office table and a spread rigged up by the red tanks.",
  459:"“Fracmaster in Russia 1989–1998” — yellow frac trucks and silos on a Siberian lease, with an inset winter shot of the crew at the iron. Shared by Alex Vilgan — one of the group's oldest photos, posted November 2010.",
  460:"On the log road — Fracmaster trucks crossing a corduroy road over the swamp, logs and black water alongside. Shared by Alex Vilgan, November 2010.",
  461:"From above — a full frac spread in deep snow, pumpers and blue and red tanks lined up on the lease. Shared by Andrew Clegg — one of the group's first photos, posted February 2010.",
@@ -592,10 +588,75 @@ var SPECIAL = {
   518:"Cropped from photo f95 — the yellow coiled-tubing unit with the big reel.",
   519:"Cropped from photo f95 — the operator’s control console.",
   520:"Cropped from photo f96 — the yellow blender truck 3501.",
-  521:"Cropped from photo f96 — the control console."
+  521:"Cropped from photo f96 — the control console.",
+  522:"Cropped from photo f22 — St. Basil's Cathedral in Red Square, from the magazine profile of the Soviet venture.",
+  523:"Cropped from photo f22 — the Leningrad shipyards, from the magazine profile of the Soviet venture.",
+  524:"Cropped from photo f23 — from the cockpit, on the way to Moscow.",
+  525:"Cropped from photo f23 — the hammer and sickle, from the magazine's ‘Master of Frac’ title page.",
+  526:"Cropped from photo f24 — Gail Gravelines, who wrote the magazine profile of Ron Bullen and the Soviet venture.",
+  527:"Cropped from photo f28 — Ron Bullen, from the ‘Soviets warm to Fracmaster’ newspaper clipping.",
+  528:"Cropped from photo f28 — the map of the Fracmaster joint-venture location, from the ‘Soviets warm to Fracmaster’ clipping.",
+  529:"Cropped from photo f47 — a van on the road, from a shared vintage post of 35mm slides.",
+  530:"Cropped from photo f47 — a yellow truck at the rig, from a shared vintage post of 35mm slides.",
+  531:"Cropped from photo f47 — yellow trucks in the yard, from a shared vintage post of 35mm slides.",
+  532:"Cropped from photo f47 — a yellow truck with a tank, from a shared vintage post of 35mm slides.",
+  533:"Cropped from photo f178 — Mr. Robert G. Welty, President and Chief Executive Officer.",
+  534:"Cropped from photo f178 — Mr. Peter Kalutich, promoted from Vice President.",
+  535:"Cropped from photo f178 — Mr. Robbie Roberts, Executive Vice President.",
+  536:"Cropped from photo f178 — Mr. Gary Sherkey, joining Fracmaster.",
+  537:"Cropped from photo f178 — Mr. Bill Jaschke, joining NAFTA.",
+  538:"Cropped from photo f190 — Isaac Woodworth, of the Medicine Hat team (‘The Team from the Hat’).",
+  539:"Cropped from photo f190 — Rodney Bosch, of the Medicine Hat team (‘The Team from the Hat’).",
+  540:"Cropped from photo f190 — Carman Ward, of the Medicine Hat team (‘The Team from the Hat’).",
+  541:"Cropped from photo f190 — Terry Avery, of the Medicine Hat team (‘The Team from the Hat’).",
+  542:"Cropped from photo f190 — Kenneth Kozly, of the Medicine Hat team (‘The Team from the Hat’).",
+  543:"Cropped from photo f190 — Jim Adams, of the Medicine Hat team (‘The Team from the Hat’).",
+  544:"Cropped from photo f190 — Ken Pearce, of the Medicine Hat team (‘The Team from the Hat’).",
+  545:"Cropped from photo f190 — Vern Martin, of the Medicine Hat team (‘The Team from the Hat’).",
+  546:"Cropped from photo f190 — Dave Thompson, of the Medicine Hat team (‘The Team from the Hat’).",
+  547:"Cropped from photo f190 — Dave Sailer, of the Medicine Hat team (‘The Team from the Hat’).",
+  548:"Cropped from photo f190 — Eric Leeks, of the Medicine Hat team (‘The Team from the Hat’).",
+  549:"Cropped from photo f190 — Dale Bowers, of the Medicine Hat team (‘The Team from the Hat’).",
+  550:"Cropped from photo f190 — Ron Wright, of the Medicine Hat team (‘The Team from the Hat’).",
+  551:"Cropped from photo f190 — Mark Sullivan, of the Medicine Hat team (‘The Team from the Hat’).",
+  552:"Cropped from photo f190 — Doug Bergren, of the Medicine Hat team (‘The Team from the Hat’).",
+  553:"Cropped from photo f190 — Mike Burton, of the Medicine Hat team (‘The Team from the Hat’).",
+  554:"Cropped from photo f190 — Ken Bachmeier, of the Medicine Hat team (‘The Team from the Hat’).",
+  555:"Cropped from photo f190 — Trevor Taplin, of the Medicine Hat team (‘The Team from the Hat’).",
+  556:"Cropped from photo f190 — a member of the Medicine Hat team; the name is cut off in the book photo.",
+  557:"Cropped from photo f190 — Glen Dalgleish, of the Medicine Hat team (‘The Team from the Hat’).",
+  558:"Cropped from photo f190 — Morgan Judge, of the Medicine Hat team (‘The Team from the Hat’).",
+  559:"Cropped from photo f190 — Larry Vandele, of the Medicine Hat team (‘The Team from the Hat’).",
+  560:"Cropped from photo f190 — William Pavlik, of the Medicine Hat team (‘The Team from the Hat’).",
+  561:"Cropped from photo f190 — Archie Champine, of the Medicine Hat team (‘The Team from the Hat’).",
+  562:"Cropped from photo f190 — Ron McAndrews, of the Medicine Hat team (‘The Team from the Hat’).",
+  563:"Cropped from photo f190 — John Ingram, of the Medicine Hat team (‘The Team from the Hat’).",
+  564:"Cropped from photo f190 — Ken Bellamy, of the Medicine Hat team (‘The Team from the Hat’).",
+  565:"Cropped from photo f190 — Michael Person, of the Medicine Hat team (‘The Team from the Hat’).",
+  566:"Cropped from photo f190 — Derrick Dooley, of the Medicine Hat team (‘The Team from the Hat’).",
+  567:"Cropped from photo f190 — Jeffrey Strange, of the Medicine Hat team (‘The Team from the Hat’).",
+  568:"Cropped from photo f190 — Donald Temes, of the Medicine Hat team (‘The Team from the Hat’).",
+  569:"Cropped from photo f190 — Brent Heinrichs, of the Medicine Hat team (‘The Team from the Hat’).",
+  570:"Cropped from photo f190 — Keith McLean, of the Medicine Hat team (‘The Team from the Hat’).",
+  571:"Cropped from photo f190 — Lee Orr, of the Medicine Hat team (‘The Team from the Hat’).",
+  572:"Cropped from photo f190 — Harvey Schnee, of the Medicine Hat team (‘The Team from the Hat’).",
+  573:"Cropped from photo f190 — Ed Gates, of the Medicine Hat team (‘The Team from the Hat’).",
+  574:"Cropped from photo f190 — Brian Kuss, of the Medicine Hat team (‘The Team from the Hat’).",
+  575:"Cropped from photo f190 — Derrick Adams, of the Medicine Hat team (‘The Team from the Hat’).",
+  576:"Cropped from photo f190 — Ira Mack, of the Medicine Hat team (‘The Team from the Hat’).",
+  577:"Cropped from photo f190 — Dale Weiss, of the Medicine Hat team (‘The Team from the Hat’).",
+  578:"Cropped from photo f190 — a member of the Medicine Hat team; the name is cut off in the book photo.",
+  579:"Cropped from photo f190 — a member of the Medicine Hat team; the name is cut off in the book photo.",
+  580:"Cropped from photo f393 — the new hires at the Wainwright station, June 1993.",
+  581:"Cropped from photo f394 — the crew on the bumper cars, from the Frac Family magazine cover, 1993.",
+  582:"Cropped from photo f457 — the fleet lined up on location, from a magazine profile of the company.",
+  583:"Cropped from photo f457 — a Well Stimulation unit, from a magazine profile of the company.",
+  584:"Cropped from photo f457 — two of the crew, from a magazine profile of the company.",
+  585:"Cropped from photo f458 — the spread rigged up by the red tanks, from a magazine profile of the company.",
+  586:"Cropped from photo f458 — around the head-office table, from a magazine profile of the company."
 };
 var ORDER_A = [6, 7, 8, 9, 14, 17, 18, 20, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46,
-  47, 48, 49, 50, 53, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 79, 81, 92,
+  48, 49, 50, 53, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 79, 81, 92,
   104, 106, 107, 108, 116, 118, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 134, 135, 136,
   138, 139, 149, 150, 151, 161, 163, 167, 169, 175, 177, 180, 182, 183, 187, 188, 189, 192, 193, 194,
   195, 197, 198, 200, 216, 217, 218, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232,
@@ -603,20 +664,23 @@ var ORDER_A = [6, 7, 8, 9, 14, 17, 18, 20, 29, 30, 31, 32, 33, 34, 35, 36, 37, 3
   329, 330, 336, 341, 347, 348, 357, 358, 359, 360, 371, 372, 373, 374, 375, 376, 377, 378, 380, 381,
   383, 384, 385, 389, 390, 397, 398, 399, 401, 402, 403, 409, 412, 416, 418, 419, 420, 421, 422, 423,
   424, 425, 426, 427, 428, 431, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 451, 453,
-  454, 455, 456, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 471, 472, 473, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 503, 504, 505, 506, 508, 509, 510, 511, 512, 513, 514, 515, 518, 519, 520, 521];
-var ORDER_B = [1, 2, 3, 4, 5, 10, 11, 12, 13, 15, 19, 21, 22, 23, 24, 26, 27, 28, 51, 52, 54, 55, 56, 75, 76, 78,
+  454, 455, 456, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 471, 472, 473, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 503, 504, 505, 506, 508, 509, 510, 511, 512, 513, 514, 515, 518, 519, 520, 521, 523, 524, 529, 530, 531, 532, 580, 581, 582, 583, 585];
+var ORDER_B = [1, 2, 3, 4, 5, 10, 11, 12, 13, 15, 19, 21, 26, 27, 51, 52, 54, 55, 56, 75, 76, 78,
   80, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 105,
   109, 110, 111, 112, 113, 114, 115, 117, 132, 133, 137, 140, 141, 142, 143, 144, 145, 152, 153, 154,
-  155, 156, 157, 158, 160, 162, 164, 165, 170, 171, 173, 174, 176, 178, 179, 181, 184, 185, 186, 190,
+  155, 156, 157, 158, 160, 162, 164, 165, 170, 171, 173, 174, 176, 179, 181, 184, 185, 186,
   191, 199, 201, 202, 203, 204, 205, 208, 209, 211, 212, 213, 214, 215, 219, 233, 245, 246, 248, 250,
   251, 252, 253, 281, 282, 283, 284, 285, 286, 287, 289, 296, 297, 298, 299, 300, 301, 302, 303, 304,
   305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 323, 324, 331,
   333, 334, 335, 337, 338, 339, 340, 349, 350, 351, 352, 353, 354, 355, 356, 361, 362, 363, 364, 365,
-  366, 367, 368, 369, 370, 386, 387, 388, 391, 392, 393, 394, 395, 396, 400, 404, 405, 406, 407, 408,
-  410, 414, 415, 417, 429, 430, 432, 433, 434, 435, 436, 437, 450, 452, 457, 458];
+  366, 367, 368, 369, 370, 386, 387, 388, 391, 392, 395, 396, 400, 404, 405, 406, 407, 408,
+  410, 414, 415, 417, 429, 430, 432, 433, 434, 435, 436, 437, 450, 452, 522, 525, 528];
 var ORDER_C = [16, 25, 74, 77, 119, 120, 146, 147, 148, 159, 166, 168, 172, 196, 206, 207, 210, 235, 244, 249, 254,
   255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274,
-  275, 276, 277, 278, 279, 280, 325, 326, 332, 342, 343, 344, 345, 346, 379, 382, 411, 413, 470, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 496, 497, 498, 499, 500, 501, 502, 507, 516, 517];
+  275, 276, 277, 278, 279, 280, 325, 326, 332, 342, 343, 344, 345, 346, 379, 382, 411, 413, 470, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 496, 497, 498, 499, 500, 501, 502, 507, 516, 517,
+  526, 527, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550,
+  551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570,
+  571, 572, 573, 574, 575, 576, 577, 578, 579, 584, 586];
 var ORDER = ORDER_A.concat(ORDER_B, ORDER_C);
 var CAT = {};
 ORDER_A.forEach(function(i){ CAT[i]="equip"; });
@@ -626,7 +690,7 @@ var ITEMS = [];
 ORDER.forEach(function(i){
   var n = (i<10?"0":"")+i;
   ITEMS.push({src:"assets/gallery/f"+n+".jpg", thumb:"assets/thumbs/f"+n+".jpg", kind:"group", cat:CAT[i],
-    t:"Group archive photo "+i+" of 521",
+    t:"Group archive photo "+i+" of 575",
     c: SPECIAL[i] || "Trucks, crews, yards and keepsakes from the Fracmaster years.",
     s:"Canadian Fracmaster Ltd. Facebook group"});
 });
